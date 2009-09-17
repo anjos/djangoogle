@@ -15,8 +15,8 @@ INSTALLDIR=${BASEDIR}/sw
 # Versions
 setuptools_egg=setuptools-0.6c9-py${python_version}.egg
 setuptools=http://pypi.python.org/packages/${python_version}/s/setuptools/${setuptools_egg};
-djangoogle=../../djangoogle-0.1
 rosetta=http://django-rosetta.googlecode.com/files/django-rosetta-0.4.5.svn.tar.gz
+djangoogle=..
 
 # This script will download and install all necessary software for us
 [ -r sw ] && rm -f sw;
