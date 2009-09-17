@@ -1,0 +1,319 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-09-17 17:35+0200\n"
+"PO-Revision-Date: 2009-09-17 17:29\n"
+"Last-Translator: <andre.dos.anjos@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Translated-Using: django-rosetta 0.4.5.svn\n"
+
+#: models.py:97
+msgid "Picasaweb e-mail"
+msgstr "E-mail do Picasaweb"
+
+#: models.py:98
+msgid "Insert the e-mail of a picasaweb user in the form of user@domain"
+msgstr "Coloque o e-mail do usuário no formato usuário@domínio"
+
+#: models.py:100
+msgid "Number of albums to display"
+msgstr "Número de álbuns a mostrar"
+
+#: models.py:101
+msgid "The special value of 0 (zero) will display all albums"
+msgstr ""
+"O valor especial 0 (zero) fará com que eu mostre todos os álbuns disponíveis"
+
+#: models.py:104
+msgid "google picasa web account"
+msgstr "conta do google picasaweb"
+
+#: models.py:105
+msgid "google picasa web accounts"
+msgstr "contas do google picasaweb"
+
+#: models.py:170
+#, python-format
+msgid "Last uploaded album of %(email)s"
+msgstr "Último álbum de %(email)s"
+
+#: models.py:172
+#, python-format
+msgid "%(email)s, last %(num_albums)s albums"
+msgstr "Últimos %(num_albums)s álbuns de %(email)s"
+
+#: models.py:175
+#, python-format
+msgid "%(email)s"
+msgstr "%(email)s"
+
+#: models.py:201
+msgid "Calendar identifier"
+msgstr "Identificador do Calendário"
+
+#: models.py:202
+msgid ""
+"Insert the identifier of a google calendar in the form of secret@domain. "
+"This identifier can be read by going into the calendar details of your "
+"google account."
+msgstr ""
+"Inserir o identificador do calendário no formato segredo@domínio. Esse "
+"identificador pode ser recuperado visitando-se os detalhes do calendário na "
+"sua conta."
+
+#: models.py:205
+msgid "google calendar"
+msgstr "calendário do google"
+
+#: models.py:206
+msgid "google calendars"
+msgstr "calendários do google"
+
+#: models.py:246
+#, python-format
+msgid "Public google calendar \"%s\""
+msgstr "Calendário público do google \"%s\""
+
+#: models.py:297
+msgid "Name"
+msgstr "Nome"
+
+#: models.py:297
+msgid ""
+"Insert here a meaningful name so you remember what is this playlist key good "
+"for."
+msgstr ""
+"Coloque aqui um nome para a lista de reprodução de forma a se lembrar a que "
+"serve a chave."
+
+#: models.py:298
+msgid "YouTube playlist identifier"
+msgstr "Identificador de lista de reprodução do YouTube"
+
+#: models.py:298
+msgid "Insert the key of the youtube (public) playlist"
+msgstr "Coloque a chave da lista de reprodução (pública) do YouTube"
+
+#: models.py:301
+msgid "youtube playlist"
+msgstr "Lista de reprodução do YouTube"
+
+#: models.py:302
+msgid "youtube playlists"
+msgstr "Listas de reprodução do YouTube"
+
+#: models.py:335
+#, python-format
+msgid "Youtube playlist \"%(name)s\""
+msgstr "Lista de reprodução YouTube \"%(name)s\""
+
+#: templates/djangoogle/calendar_entries.html:10
+msgid "Calendar"
+msgstr "Calendário"
+
+#: templates/djangoogle/calendar_entries.html:13
+msgid "Next appointments"
+msgstr "Próximos compromissos"
+
+#: templates/djangoogle/calendar_entries.html:16
+#: templates/djangoogle/calendar_entries.html:30
+#: templates/djangoogle/picasaweb_gallery.html:39
+#: templates/djangoogle/picasaweb_last.html:23
+msgid "updated"
+msgstr "atualizado"
+
+#: templates/djangoogle/calendar_entries.html:22
+#: templates/djangoogle/calendar_next.html:5
+#: templates/djangoogle/picasaweb_slideshow.html:26
+#: templates/djangoogle/youtube_video.html:23
+msgid "Description"
+msgstr "Descrição"
+
+#: templates/djangoogle/calendar_entries.html:23
+#: templates/djangoogle/calendar_next.html:6
+msgid "When"
+msgstr "Quando"
+
+#: templates/djangoogle/calendar_entries.html:23
+#: templates/djangoogle/calendar_next.html:6
+msgid "until"
+msgstr "até"
+
+#: templates/djangoogle/calendar_entries.html:24
+#: templates/djangoogle/calendar_next.html:7
+msgid "Where"
+msgstr "Onde"
+
+#: templates/djangoogle/calendar_entries.html:31
+msgid "Cannot connect to Google Calendar service at"
+msgstr "Não posso conectar-me ao serviço de Calendário do Google em"
+
+#: templates/djangoogle/calendar_entries.html:31
+msgid "Or maybe you have no calendars configured?"
+msgstr "Ou talvez você não tenha configurado nenhum calendário?"
+
+#: templates/djangoogle/calendar_next.html:10
+msgid "No new events (or cannot connect to Google Calendar service at"
+msgstr ""
+"Não há novos compromissos (ou eu não consegui me conectar ao serviço de "
+"Calendário do Google em"
+
+#: templates/djangoogle/pagination.html:7
+msgid "Page"
+msgstr "Página"
+
+#: templates/djangoogle/pagination.html:7
+msgid "of"
+msgstr "de"
+
+#: templates/djangoogle/picasaweb_gallery.html:6
+#: templates/djangoogle/picasaweb_gallery.html:18
+msgid "Photo Gallery"
+msgstr "Galeria de Fotos"
+
+#: templates/djangoogle/picasaweb_gallery.html:21
+msgid ""
+"From this page you can access our photo albums. Click on the arrows bellow "
+"to go back in history."
+msgstr ""
+"A partir desta página você pode acessar nossos álbums de fotos. Clique nas "
+"setas abaixo para voltar no histórico."
+
+#: templates/djangoogle/picasaweb_gallery.html:29
+msgid "Click here to launch a slideshow of this album"
+msgstr "Clique aqui para disparar um slideshow deste álbum"
+
+#: templates/djangoogle/picasaweb_gallery.html:32
+msgid "Click here to view this album directly inside PicasaWeb"
+msgstr "Clique aqui para ver este álbum diretamente no PicasaWeb"
+
+#: templates/djangoogle/picasaweb_gallery.html:32
+msgid "PicasaWeb"
+msgstr "PicasaWeb"
+
+#: templates/djangoogle/picasaweb_gallery.html:37
+#, python-format
+msgid "%(numphotos)s photo%(plural)s by"
+msgstr "%(numphotos)s foto%(plural)s por"
+
+#: templates/djangoogle/picasaweb_gallery.html:38
+#: templates/djangoogle/youtube_video.html:19
+msgid "published"
+msgstr "publicado"
+
+#: templates/djangoogle/picasaweb_gallery.html:47
+#: templates/djangoogle/picasaweb_slideshow.html:34
+msgid "Cannot connect to PicasaWeb service."
+msgstr "Não posso conectar-me ao serviço PicasaWeb."
+
+#: templates/djangoogle/picasaweb_last.html:23
+#, python-format
+msgid "%(numphotos)s photo%(plural)s"
+msgstr "%(numphotos)s foto%(plural)s"
+
+#: templates/djangoogle/picasaweb_last.html:30
+msgid "Cannot connect to PicasaWeb service at"
+msgstr "Não posso conectar-me ao serviço PicasaWeb em"
+
+#: templates/djangoogle/picasaweb_slideshow.html:6
+#: templates/djangoogle/picasaweb_slideshow.html:18
+msgid "Slideshow of"
+msgstr "Slideshow de"
+
+#: templates/djangoogle/picasaweb_slideshow.html:24
+msgid "Album details"
+msgstr "Detalhes do álbum"
+
+#: templates/djangoogle/picasaweb_slideshow.html:25
+msgid "Author"
+msgstr "Autor"
+
+#: templates/djangoogle/picasaweb_slideshow.html:25
+msgid "Click to see other albums by this author"
+msgstr "Clique aqui para ver outros álbums deste autor"
+
+#: templates/djangoogle/picasaweb_slideshow.html:27
+msgid "Location"
+msgstr "Lugar"
+
+#: templates/djangoogle/picasaweb_slideshow.html:28
+msgid "Number of photos"
+msgstr "Número de fotos"
+
+#: templates/djangoogle/picasaweb_slideshow.html:29
+msgid "Published"
+msgstr "Publicado"
+
+#: templates/djangoogle/picasaweb_slideshow.html:30
+msgid "Updated"
+msgstr "Atualizado"
+
+#: templates/djangoogle/youtube_gallery.html:7
+#: templates/djangoogle/youtube_gallery.html:19
+#: templates/djangoogle/youtube_video.html:6
+msgid "Video Gallery"
+msgstr "Galeria de Vídeos"
+
+#: templates/djangoogle/youtube_gallery.html:23
+msgid ""
+"From this page you can access all videos registered. Click on the arrows "
+"bellow to go back in history."
+msgstr ""
+"A partir desta página você pode acessar todos os vídeos registrados. Clique "
+"nas setas para voltar no histórico."
+
+#: templates/djangoogle/youtube_gallery.html:39
+#: templates/djangoogle/youtube_video.html:25
+msgid "seconds"
+msgstr "segundos"
+
+#: templates/djangoogle/youtube_gallery.html:40
+msgid "Playlist"
+msgstr "Lista de reprodução"
+
+#: templates/djangoogle/youtube_gallery.html:40
+msgid "Click here to only view videos from this playlist"
+msgstr "Clique aqui para ver somente os vídeos desta lista de reprodução"
+
+#: templates/djangoogle/youtube_gallery.html:48
+#: templates/djangoogle/youtube_video.html:29
+msgid "Cannot connect to YouTube service at"
+msgstr "Não posso conectar-me ao serviço YouTube em"
+
+#: templates/djangoogle/youtube_video.html:24
+msgid "Uploaded by"
+msgstr "Enviado por"
+
+#: templates/djangoogle/youtube_video.html:25
+msgid "Duration"
+msgstr "Duração"
+
+#~ msgid "Agenda"
+#~ msgstr "Agenda"
+
+#~ msgid "No location specified"
+#~ msgstr "Nenhuma localidade especificada"
+
+#~ msgid "No geo tags specified"
+#~ msgstr "Nenhum rótulo geográfico especificado"
+
+#~ msgid "Photos"
+#~ msgstr "Fotos"
+
+#~ msgid "Warning: Picasaweb account %(email)s is not valid!"
+#~ msgstr "Atenção: A conta picasaweb %(email)s não é válida!"
+
+#~ msgid "%(total)s album%(plural)s available"
+#~ msgstr "%(total)s álbum%(plural)s disponível(is)"
+
+#~ msgid "No Picasaweb galleries are available."
+#~ msgstr "Não há galerias picasaweb disponíveis."

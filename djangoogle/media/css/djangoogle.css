@@ -1,0 +1,8 @@
+img.photo {
+  background-color: white;
+  border: solid #ccc 1px;
+  padding: 0.6em;
+  -moz-border-radius: 0.3em; 
+  -khtml-border-radius: 0.3em; 
+  border-radius: 0.3em; 
+}
