@@ -8,29 +8,33 @@ start_dir=`pwd`
 source ./setup.sh
 ./install.sh
 
-[ -d project ] && rm -rf project;
-[ -d media ] && rm -rf media;
-django-admin.py startproject project;
-rm -f project/settings.py;
-ln -s ../settings.py project/settings.py;
-rm -f project/urls.py;
-ln -s ../urls.py project/urls.py;
+if [ ! -d project ]; then
+  django-admin.py startproject project;
+  rm -f project/settings.py;
+  ln -s ../settings.py project/settings.py;
+  rm -f project/urls.py;
+  ln -s ../urls.py project/urls.py;
 
-# base django project installation
-cd project;
-if [ ! -e db.sql3 ]; then
+  # base django project installation
+  cd project;
   ${PYTHON} manage.py syncdb --noinput;
   ${PYTHON} manage.py createsuperuser --email=andre.dos.anjos@gmail.com 
+  mkdir templates;
+  ln -s ../../base.html templates/base.html;
+  cd ${start_dir};
+
+  # and prepare the database for a manual inspection
+  ${PYTHON} sw/djangoogle*/djangoogle/test_initial.py
 fi
-mkdir templates;
-ln -s ../../base.html templates/base.html;
-cd ${start_dir};
-mkdir media;
-cd media;
-ln -s ../sw/djangoogle*/djangoogle/media djangoogle;
-ln -s ../sw/Django*/django/contrib/admin/media django;
-svn co http://django-rosetta.googlecode.com/svn/trunk/rosetta/templates/rosetta rosetta
-cd ${start_dir};
+
+if [ ! -d media ]; then
+  mkdir media;
+  cd media;
+  ln -s ../sw/djangoogle*/djangoogle/media djangoogle;
+  ln -s ../sw/Django*/django/contrib/admin/media django;
+  svn co http://django-rosetta.googlecode.com/svn/trunk/rosetta/templates/rosetta rosetta
+  cd ${start_dir};
+fi
 
 # update the translation strings
 cd sw/djangoogle*/djangoogle;
@@ -41,8 +45,6 @@ cd ${start_dir};
 cd project;
 ${PYTHON} -m compileall .
 ${PYTHON} manage.py test djangoogle;
-# and prepare the database for a manual inspection
-${PYTHON} ../sw/djangoogle*/djangoogle/test_initial.py
 # and let the webserver running
 ${PYTHON} manage.py runserver 8080;
 cd ${start_dir};
