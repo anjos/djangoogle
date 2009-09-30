@@ -106,7 +106,7 @@ class PicasawebAccount(models.Model):
 
   def _cache_userinfo(self):
     """Returns user information, packed in a special object type."""
-    if not hasattr(self, '__userinfo__') or outdated(self):
+    if not hasattr(self, '__userinfo__') or not self.__userinfo__ or outdated(self):
       try:
         pws = gdata.photos.service.PhotosService()
         feed = pws.GetUserFeed(user=self.email, limit=0)
@@ -126,7 +126,7 @@ class PicasawebAccount(models.Model):
   userinfo = property(_cache_userinfo)
 
   def _cache_feed(self):
-    if not hasattr(self, '__feed__') or outdated(self):
+    if not hasattr(self, '__feed__') or not self.__feed__ or outdated(self):
       try:
         pws = gdata.photos.service.PhotosService()
         limit = None
@@ -150,7 +150,7 @@ class PicasawebAccount(models.Model):
   feed = property(_cache_feed)
 
   def _sorted_feed(self):
-    if not hasattr(self, '__sorted__') or outdated(self):
+    if not hasattr(self, '__sorted__') or not self.__sorted__ or outdated(self):
       self.__sorted__ = sorted([PicasaWebAlbum(k, self) for k in self.feed.entry])
     return self.__sorted__
 
@@ -206,7 +206,7 @@ class Calendar(models.Model):
     verbose_name_plural = _(u'google calendars')
 
   def _cache_feed(self):
-    if not hasattr(self, '__feed__') or outdated(self):
+    if not hasattr(self, '__feed__') or not self.__feed__ or outdated(self):
       try:
         cal = gdata.calendar.service.CalendarService()
         start_date = time.strftime('%Y-%m-%d')
@@ -220,7 +220,7 @@ class Calendar(models.Model):
   feed = property(_cache_feed)
 
   def _sorted_feed(self):
-    if not hasattr(self, '__sorted__') or outdated(self):
+    if not hasattr(self, '__sorted__') or not self.__sorted__ or outdated(self):
       if self.feed:
         self.__sorted__ = sorted([CalendarEntry(k, self) for k in self.feed.entry])
       else: self.__sorted__ = []
@@ -302,7 +302,7 @@ class YouTubePlayList(models.Model):
     verbose_name_plural = _(u'youtube playlists')
 
   def _cache_feed(self):
-    if not hasattr(self, '__feed__') or outdated(self):
+    if not hasattr(self, '__feed__') or not self.__feed__ or outdated(self):
       try:
         yts = gdata.youtube.service.YouTubeService()
         self.__feed__ = \
@@ -316,7 +316,7 @@ class YouTubePlayList(models.Model):
   feed = property(_cache_feed)
 
   def _sorted_feed(self):
-    if not hasattr(self, '__sorted__') or outdated(self):
+    if not hasattr(self, '__sorted__') or not self.__sorted__ or outdated(self):
       yts = gdata.youtube.service.YouTubeService()
       self.__sorted__ = sorted([YouTubeVideo(yts, k, self) for k in self.feed.entry])
     return self.__sorted__
