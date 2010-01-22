@@ -12,6 +12,7 @@ import time
 import pytz
 import datetime
 import urllib
+import re
 
 def populate_defaults():
   from django.conf import settings
@@ -21,6 +22,13 @@ def populate_defaults():
       setattr(settings, var, defaults[var])
 
 populate_defaults()
+
+YOUTUBE_VIDEO_RE = re.compile('^.*/feeds\/api/videos/[^/]*$')
+def get_video_link(l):
+  """Selects the URL that mostly looks like the video main entry."""
+  retval = [k.href for k in l if YOUTUBE_VIDEO_RE.match(k.href)]
+  if len(retval): return retval[0]
+  return None
 
 def gd_date(s):
   """Converts a google data date representation into a real date"""
@@ -256,8 +264,12 @@ class YouTubeVideo:
 
   def __init__(self, service, entry, parent):
     """Initialize from Google data feed entry from YouTube."""
+    video_link = get_video_link(entry.link)
+    if not video_link:
+      raise RuntimeError, 'Cannot find relevant video link in %s' % \
+          [k.href for k in entry.link]
     self.playlist_entry = entry
-    self.original_entry = service.GetYouTubeVideoEntry(entry.link[4].href)
+    self.original_entry = service.GetYouTubeVideoEntry(video_link)
     self.author = entry.author[0].name.text
     self.description = entry.description.text
     if isinstance(self.description, str): 
