@@ -1,15 +1,11 @@
-table.album_preview ,
-table.video_preview {
+table.preview {
   border-spacing: 0px;
   display: inline-block;
   padding: 0.2em;
   background: #eee;
-  width: 300px;
 }
 
-table.album_preview td.thumbnail img,
-table.video_preview td.thumbnail img
-{
+table.preview td.thumbnail img {
   background-color: white;
   border: solid #ccc 1px;
   padding: 0.2em;
@@ -18,25 +14,24 @@ table.video_preview td.thumbnail img
   border-radius: 0.3em; 
 }
 
-table.album_preview td ,
-table.video_preview td {
+table.preview td {
   font-family: arial, helvetica, sans;
   vertical-align: top;
 }
 
-table.album_preview td.thumbnail ,
-table.video_preview td.thumbnail {
+table.preview td.thumbnail {
   width: 10%;
 }
 
-table.album_preview .album_title ,
-table.video_preview .album_title {
+table.preview .object_title {
   text-align: left;
   font-weight: bold;
 }
 
-table.album_preview .comment ,
-table.video_preview .comment {
+table.preview .comment {
   font-size: 0.7em;
   color: #555;
+}
+
+table.horizontal td {
 }
