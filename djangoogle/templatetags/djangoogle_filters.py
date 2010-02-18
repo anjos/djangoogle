@@ -36,3 +36,17 @@ def getitem(value, arg):
     return value[arg]
   except:
     return ''
+
+@register.filter("special_pagination")
+def special_pagination(paginator):
+  around = 3 # number of pages around the current one to show
+  pages = range(paginator.number - around, paginator.number + around + 1) 
+  pages = [k for k in pages if k > 0 and k <= paginator.paginator.num_pages]
+  if pages[0] > 1: 
+    if pages[0] > 2: pages.insert(0, False)
+    pages.insert(0, 1)
+  if pages[-1] < paginator.paginator.num_pages:
+    if pages[-1] < (paginator.paginator.num_pages - 1): pages.append(False)
+    pages.append(paginator.paginator.num_pages)
+  return pages
+

@@ -13,19 +13,34 @@ register = template.Library()
 from djangoogle.models import *
 import socket
 
-@register.inclusion_tag('djangoogle/picasaweb_last.html')
-def last_album():
+@register.inclusion_tag('djangoogle/embed/media_last.html')
+def djangoogle_last_media(url=settings.MEDIA_URL):
+  return {'MEDIA_URL': url}
+
+@register.inclusion_tag('djangoogle/embed/picasaweb_last.html')
+def last_albums(n, media_url=settings.MEDIA_URL):
   account = PicasawebAccount.objects.all()
-  obj = None
+  entries = []
   try:
-    for a in account:
-      if not obj: obj = a.last
-      elif obj < a.last: obj = a.last
+    for a in account: 
+      entries += a.sorted
+    entries = sorted(entries, reverse=True)
   except socket.gaierror:
     pass #working offline?
-  return {'lastalbum': obj, 'MEDIA_URL': settings.MEDIA_URL}
+  return {'objects': entries[:n], 'MEDIA_URL': media_url}
 
-@register.inclusion_tag('djangoogle/calendar_next.html')
+@register.inclusion_tag('djangoogle/embed/youtube_last.html')
+def last_videos(n, media_url=settings.MEDIA_URL):
+  playlists = YouTubePlayList.objects.all()
+  entries = []
+  try:
+    for p in playlists: entries += p.sorted
+  except socket.gaierror:
+    pass #working offline?
+  entries.sort(reverse=True)
+  return {'objects': entries[:n], 'MEDIA_URL': media_url}
+
+@register.inclusion_tag('djangoogle/embed/calendar_next.html')
 def next_calendar_item():
   calendars = Calendar.objects.all()
   obj = None

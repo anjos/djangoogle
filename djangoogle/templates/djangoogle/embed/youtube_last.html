@@ -1,0 +1,41 @@
+{% load i18n %}
+{% comment %}requires "objects" (last N videos){% endcomment %}
+<span class="djangoogle">
+  <span class="bubble">
+    <span class="horizontal list">
+      <table>
+        <tr class="bubble_title"><td>{% trans "Latest videos" %}</td></tr>
+        <tr>
+          <td class="bubble_contents">
+          {% if objects %}
+          {% for obj in objects %}
+          {% with 80 as thumbheight %}<!-- hardcoded widthxheight for thumbs -->
+            <table class="video_preview">
+              <tr>
+                <td class="thumbnail">
+                  <a href="{% url youtube-view-video obj.parent.id obj.id %}"><img width="{% widthratio thumbheight obj.thumbnail.height obj.thumbnail.width %}" height="{{ thumbheight }}" src="{{ obj.thumbnail.url }}"/></a>
+                </td>
+                <td>
+                  <div class="album_title">{{ obj.title|truncatewords:"5" }}</div>
+                  <div class="comment">
+                    {{ obj.duration }} {% trans "seconds" %}, {% trans "at" %} <a href="{% url youtube-list-view obj.parent.id %}" title="{% trans 'Click here to only view videos from this playlist' %}">{{ obj.parent.name }}</a>, {% trans "updated" %} {{ obj.published|date:"D, j/M/Y" }}
+                    {% if obj.description %}<br/>{{ obj.description|truncatewords:"8" }} {% endif %}
+                  </div>
+                </td>
+              </tr>
+            </table><!-- ends class="video_preview" -->
+          {% endwith %}
+          {% endfor %}
+          {% else %}
+            <table>
+              <tr>
+                <td><div class="comment">{% trans "Cannot connect to YouTube service at" %}<br/>{% now "H:i j/M/Y" %}</div></td>
+              </tr>
+            </table>
+          {% endif %}
+          </td><!-- ends class="bubble_contents" -->
+        </tr>
+      </table>
+    </span><!-- ends class="horizontal list" -->
+  </span><!-- ends class="bubble" -->
+</span><!-- ends class="djangoogle" -->

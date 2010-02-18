@@ -6,3 +6,36 @@ img.photo {
   -khtml-border-radius: 0.3em; 
   border-radius: 0.3em; 
 }
+
+/* paginator style */
+.pagination {
+  font-family: arial, helvetica, sans;
+  font-weight: bold; 
+  font-size: 0.9em;
+  color: #333;
+}
+
+.pagination .page {
+  background-color: #ccc;
+  border-color: #ccc;
+  border-style: outset;
+  border-width: 1px;
+  /* order is top right bottom left */
+  padding: 0.2em 0.5em 0.2em 0.5em;
+}
+
+.pagination .page:hover {
+  background-color: #f88;
+  border-color: #f88;
+  border-style: inset;
+}
+
+.pagination .current {
+  background-color: #bdf;
+  border-color: #bdf;
+}
+
+.pagination a {
+  text-decoration: none;
+  color: #333;
+}

@@ -21,6 +21,7 @@ if [ ! -d project ]; then
   ${PYTHON} manage.py createsuperuser --email=andre.dos.anjos@gmail.com 
   mkdir templates;
   ln -s ../../base.html templates/base.html;
+  ln -s ../../home.html templates/home.html;
   cd ${start_dir};
 
   # and prepare the database for a manual inspection

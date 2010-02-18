@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load i18n djangoogle_tags %}
+
+{% block title %}{% trans "Test home page" %}{% endblock %}
+
+{% block media %}
+{{ block.super }}
+{% djangoogle_last_media %}
+{% endblock %}
+
+{% block content %}
+<table class="home">
+  <tr>
+    <td>
+      {% last_albums 2 %}
+    </td>
+    <td>
+      {% last_videos 2 %}
+    </td>
+  </tr>
+</table>
+{% endblock %}

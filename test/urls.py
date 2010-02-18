@@ -5,6 +5,7 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
+    (r'^$', 'django.views.generic.simple.direct_to_template', {'template': 'home.html'}), 
     (r'^admin/(.*)', admin.site.root),
     (r'^google/', include('djangoogle.urls')),
     (r'^i18n/', include('django.conf.urls.i18n')),

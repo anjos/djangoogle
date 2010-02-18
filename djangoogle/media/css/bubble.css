@@ -1,0 +1,42 @@
+table.album_preview ,
+table.video_preview {
+  border-spacing: 0px;
+  display: inline-block;
+  padding: 0.2em;
+  background: #eee;
+  width: 300px;
+}
+
+table.album_preview td.thumbnail img,
+table.video_preview td.thumbnail img
+{
+  background-color: white;
+  border: solid #ccc 1px;
+  padding: 0.2em;
+  -moz-border-radius: 0.3em; 
+  -khtml-border-radius: 0.3em; 
+  border-radius: 0.3em; 
+}
+
+table.album_preview td ,
+table.video_preview td {
+  font-family: arial, helvetica, sans;
+  vertical-align: top;
+}
+
+table.album_preview td.thumbnail ,
+table.video_preview td.thumbnail {
+  width: 10%;
+}
+
+table.album_preview .album_title ,
+table.video_preview .album_title {
+  text-align: left;
+  font-weight: bold;
+}
+
+table.album_preview .comment ,
+table.video_preview .comment {
+  font-size: 0.7em;
+  color: #555;
+}

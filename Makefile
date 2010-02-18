@@ -42,6 +42,9 @@ update_languages:
 test: 
 	@cd test && ./run.sh
 
+link_test:
+	@cd test && LINK=1 ./run.sh
+
 clean: remove_django
 	find . -name '*~' -print0 | xargs -0 rm -vf 
 	find . -name '*.py?' -print0 | xargs -0 rm -vf

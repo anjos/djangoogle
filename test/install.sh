@@ -41,6 +41,16 @@ rm -f ${setuptools_egg}
 export PATH=${INSTALLDIR}:${PATH}
 echo "### Installation of ${setuptools_egg} is done!"
 
+function link_install () {
+  install $1 $2;
+  echo "### Link installing $1..."
+  location=`readlink -f $2/$1`;
+  cd ${INSTALLDIR}/djangoogle-*;
+  rm -rf $1;
+  ln -s $location .;
+  cd -;
+}
+
 function install () {
   local package=$1;
   shift;
@@ -49,5 +59,8 @@ function install () {
   echo "### Installation of $package is done!"
 }
 
-install djangoogle ${djangoogle}
+# If you define "LINK" to any value, we use the link install strategy
+if [ -n "$LINK" ]; then link_install djangoogle ${djangoogle};
+else install djangoogle ${djangoogle}; fi
+
 install rosetta ${rosetta}
