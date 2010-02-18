@@ -18,6 +18,7 @@ setup(
     package_data = {
       'djangoogle': [
         'templates/djangoogle/*.html',
+        'templates/djangoogle/embed/*.html',
         'media/css/*.css',
         'media/img/*',
         'locale/*/LC_MESSAGES/django.po',
