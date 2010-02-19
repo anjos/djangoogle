@@ -15,15 +15,18 @@
 <div class="djangoogle">
 <div class="youtube">
 
-<h2 class="title">{{ object.title }}</h2>
-<p class="date">{% trans "published" %}: {{ object.published|date:"j/M/Y" }}</p> 
+<p class="title">{{ object.title }}</p>
+
 {% if object %}
 <div class="video">
-{{ object.flash_player_html|safe }}<br/>
-{% if object.description %}{% trans "Description" %}: {{ object.description }}<br/>{% endif %}
-{% trans "Uploaded by" %}: {{ object.author }}<br/>
-{% trans "Duration" %}: {{ object.duration }} {% trans "seconds" %}
+{{ object.flash_player_html|safe }}
 </div>
+
+<h2>{% trans "Video details" %}</h2>
+<p>{% if object.description %}{% trans "Description" %}: {{ object.description }}<br/>{% endif %}</p>
+<p>{% trans "Uploaded by" %}: {{ object.author }}</p>
+<p class="date">{% trans "Published" %}: {{ object.published|date:"j/M/Y" }}</p>
+<p>{% trans "Duration" %}: {{ object.duration }} {% trans "seconds" %}</p>
 
 {% else %}
 <p class="preamble">{% trans "Cannot connect to YouTube service at" %} {% now "H:i j/M/Y" %}</p>

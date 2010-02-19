@@ -18,7 +18,7 @@ def djangoogle_last_media(url=settings.MEDIA_URL):
   return {'MEDIA_URL': url}
 
 @register.inclusion_tag('djangoogle/embed/picasaweb_last.html')
-def last_albums(n, thumb_height, media_url=settings.MEDIA_URL):
+def last_albums(n, thumb_height=80, media_url=settings.MEDIA_URL):
   account = PicasawebAccount.objects.all()
   entries = []
   try:
@@ -32,7 +32,7 @@ def last_albums(n, thumb_height, media_url=settings.MEDIA_URL):
           'MEDIA_URL': media_url}
 
 @register.inclusion_tag('djangoogle/embed/youtube_last.html')
-def last_videos(n, thumb_height, media_url=settings.MEDIA_URL):
+def last_videos(n, thumb_height=80, media_url=settings.MEDIA_URL):
   playlists = YouTubePlayList.objects.all()
   entries = []
   try:
