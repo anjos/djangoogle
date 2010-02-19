@@ -1,14 +1,14 @@
 {% load i18n %}
 {% comment %}requires "objects" (last N videos){% endcomment %}
+{% if objects %}
 <span class="djangoogle">
   <span class="bubble">
     <span class="list">
       <table class="horizontal">
-        <tr class="bubble_title"><td>{% trans "Latest videos" %}</td></tr>
+        <tr class="bubble_title"><td colspan="{{ objects|length }}">{% trans "Latest videos" %}</td></tr>
         <tr>
-          <td class="bubble_contents">
-          {% if objects %}
           {% for obj in objects %}
+          <td class="bubble_contents {% cycle "even" "odd" %}">
           {% with 80 as thumbheight %}<!-- hardcoded widthxheight for thumbs -->
             <table class="preview">
               <tr>
@@ -25,17 +25,11 @@
               </tr>
             </table><!-- ends class="preview" -->
           {% endwith %}
-          {% endfor %}
-          {% else %}
-            <table>
-              <tr>
-                <td><div class="comment">{% trans "Cannot connect to YouTube service at" %}<br/>{% now "H:i j/M/Y" %}</div></td>
-              </tr>
-            </table>
-          {% endif %}
           </td><!-- ends class="bubble_contents" -->
+          {% endfor %}
         </tr>
       </table>
     </span><!-- ends class="horizontal list" -->
   </span><!-- ends class="bubble" -->
 </span><!-- ends class="djangoogle" -->
+{% endif %}

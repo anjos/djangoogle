@@ -1,8 +1,12 @@
+td.bubble_contents {
+  /** border: 1px blue solid; **/
+  vertical-align: top;
+}
+
 table.preview {
-  border-spacing: 0px;
-  display: inline-block;
+  /** border: 1px red solid; **/
   padding: 0.2em;
-  background: #eee;
+  height: 100%;
 }
 
 table.preview td.thumbnail img {
@@ -31,7 +35,4 @@ table.preview .object_title {
 table.preview .comment {
   font-size: 0.7em;
   color: #555;
-}
-
-table.horizontal td {
 }

@@ -40,15 +40,6 @@ def last_videos(n, media_url=settings.MEDIA_URL):
   entries.sort(reverse=True)
   return {'objects': entries[:n], 'MEDIA_URL': media_url}
 
-@register.inclusion_tag('djangoogle/embed/all_last.html')
-def last_all(albums, videos, media_url=settings.MEDIA_URL):
-  d = last_albums(albums, media_url)
-  d['albums'] = d['objects']
-  d.update(last_videos(videos, media_url))
-  d['videos'] = d['objects']
-  del d['objects']
-  return d
-
 @register.inclusion_tag('djangoogle/embed/calendar_next.html')
 def next_calendar_item():
   calendars = Calendar.objects.all()
