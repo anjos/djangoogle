@@ -9,11 +9,10 @@
         <tr>
           {% for obj in objects %}
           <td class="bubble_contents {% cycle "even" "odd" %}">
-          {% with 80 as thumbheight %}<!-- hardcoded widthxheight for thumbs -->
             <table class="preview">
               <tr>
                 <td class="thumbnail">
-                  <a href="{% url youtube-view-video obj.parent.id obj.id %}"><img width="{% widthratio thumbheight obj.thumbnail.height obj.thumbnail.width %}" height="{{ thumbheight }}" src="{{ obj.thumbnail.url }}"/></a>
+                  <a href="{% url youtube-view-video obj.parent.id obj.id %}"><img width="{% widthratio thumb_height obj.thumbnail.height obj.thumbnail.width %}" height="{{ thumb_height }}" src="{{ obj.thumbnail.url }}"/></a>
                 </td>
                 <td>
                   <div class="object_title">{{ obj.title|truncatewords:"5" }}</div>
@@ -24,7 +23,6 @@
                 </td>
               </tr>
             </table><!-- ends class="preview" -->
-          {% endwith %}
           </td><!-- ends class="bubble_contents" -->
           {% endfor %}
         </tr>

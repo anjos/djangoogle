@@ -18,7 +18,7 @@ def djangoogle_last_media(url=settings.MEDIA_URL):
   return {'MEDIA_URL': url}
 
 @register.inclusion_tag('djangoogle/embed/picasaweb_last.html')
-def last_albums(n, media_url=settings.MEDIA_URL):
+def last_albums(n, thumb_height, media_url=settings.MEDIA_URL):
   account = PicasawebAccount.objects.all()
   entries = []
   try:
@@ -27,10 +27,12 @@ def last_albums(n, media_url=settings.MEDIA_URL):
     entries = sorted(entries, reverse=True)
   except socket.gaierror:
     pass #working offline?
-  return {'objects': entries[:n], 'MEDIA_URL': media_url}
+  return {'objects': entries[:n], 
+          'thumb_height': thumb_height,
+          'MEDIA_URL': media_url}
 
 @register.inclusion_tag('djangoogle/embed/youtube_last.html')
-def last_videos(n, media_url=settings.MEDIA_URL):
+def last_videos(n, thumb_height, media_url=settings.MEDIA_URL):
   playlists = YouTubePlayList.objects.all()
   entries = []
   try:
@@ -38,7 +40,9 @@ def last_videos(n, media_url=settings.MEDIA_URL):
   except socket.gaierror:
     pass #working offline?
   entries.sort(reverse=True)
-  return {'objects': entries[:n], 'MEDIA_URL': media_url}
+  return {'objects': entries[:n], 
+          'thumb_height': thumb_height,
+          'MEDIA_URL': media_url}
 
 @register.inclusion_tag('djangoogle/embed/calendar_next.html')
 def next_calendar_item():
