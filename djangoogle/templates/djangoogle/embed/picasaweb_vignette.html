@@ -1,0 +1,17 @@
+{% load i18n %}
+{% comment %}
+Requires "obj" should be a PicasaWebAlbum
+Should also tell what "thumb_height" is supposed to be
+And, finally, how to truncate the title at "title_trunc"
+{% endcomment %}
+<table class="preview">
+  <tr>
+    <td class="thumbnail">
+      <a href="{% url djangoogle:picasaweb-view-album obj.parent.id obj.id %}" title="{% trans 'Click here to launch a slideshow of this album' %}"><img width="{% widthratio thumb_height obj.thumbnail.height obj.thumbnail.width %}" height="{{ thumb_height }}" src="{{ obj.thumbnail.url }}"/></a>
+    </td>
+    <td>
+      <div class="object_title"><a href="{{ obj.web_url }}"><img class="picasaweb-logo" src="{% url media "djangoogle/img/png/16/picasa.png" %}" title="{% trans 'Click here to view this album directly inside PicasaWeb' %}" alt="{% trans 'PicasaWeb' %}" width="15" height="16"/></a> {{ obj.title|truncatewords:title_trunc }}</div>
+      <div class="comment">{% blocktrans count obj.numphotos as counter %}{{ counter }} photo by{% plural %}{{ counter }} photos by{% endblocktrans %} <a href="{% url djangoogle:picasaweb-user-view obj.parent.id %}">{{ obj.nickname|lower }}</a>, {% trans "updated" %} {{ obj.updated|date:"D, j/M/Y" }}</div>
+    </td>
+  </tr>
+</table><!-- ends class="preview" -->

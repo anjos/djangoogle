@@ -12,10 +12,17 @@
 <table class="home">
   <tr>
     <td>
-      {% last_albums 3 %}
+      {% djangoogle_media_box 3 0 3 %}
     </td>
+  </tr>
+  <tr>
     <td>
-      {% last_videos 3 %}
+      {% djangoogle_media_box 0 3 3 %}
+    </td>
+  </tr>
+  <tr>
+    <td>
+    {% djangoogle_media_box 3 3 6 %}
     </td>
   </tr>
 </table>

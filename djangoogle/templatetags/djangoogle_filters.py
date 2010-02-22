@@ -5,6 +5,7 @@
 
 from django.template import Library
 from django.template.defaultfilters import stringfilter
+from djangoogle.models import *
 import time
 
 register = Library()
@@ -50,3 +51,12 @@ def special_pagination(paginator):
     pages.append(paginator.paginator.num_pages)
   return pages
 
+@register.filter
+def is_album(value):
+  """Says if this object is a PicasaWeb album or not."""
+  return isinstance(value, PicasaWebAlbum)
+
+@register.filter
+def is_video(value):
+  """Says if this object is an YouTube video or not."""
+  return isinstance(value, YouTubeVideo)

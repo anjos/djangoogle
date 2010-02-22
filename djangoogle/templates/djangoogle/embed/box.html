@@ -1,0 +1,26 @@
+{% load djangoogle_tags djangoogle_filters %}
+<span class="djangoogle">
+  <span class="bubble">
+    <span class="list">
+      <table>
+        <tr class="bubble_title"><td colspan="{{ objects.0|length }}">{{ title }}</td></tr>
+        {% for row in objects %}
+        <!-- {% cycle "even" "odd" as cycler %} -->
+        <tr>
+          {% for obj in row %}
+          {% if obj|is_album %}
+          <td class="bubble_contents {% cycle "even" "odd" %} photo">
+            {% picasaweb_vignette obj thumb_height title_trunc %}
+          </td><!-- ends class="bubble_contents" -->
+          {% else %}
+          <td class="bubble_contents {% cycle "even" "odd" %} video">
+            {% youtube_vignette obj thumb_height title_trunc desc_trunc %}
+          </td><!-- ends class="bubble_contents" -->
+          {% endif %}
+          {% endfor %}
+        </tr>
+        {% endfor %}
+      </table>
+    </span><!-- ends class="list" -->
+  </span><!-- ends class="bubble" -->
+</span><!-- ends class="djangoogle" -->
