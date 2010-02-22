@@ -4,7 +4,7 @@
 
 {% block media %} <!-- extends the current media block -->
 {{ block.super }}
-<link href="{{ MEDIA_URL }}djangoogle/css/calendar.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="{% url media "djangoogle/css/calendar.css" %}" rel="stylesheet" type="text/css" media="screen" />
 {% endblock %}
 
 {% block title %}{% trans "Calendar" %}{% endblock %}

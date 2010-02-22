@@ -7,7 +7,7 @@
 
 {% block media %} <!-- extends the current media block -->
 {{ block.super }}
-<link href="{{ MEDIA_URL }}djangoogle/css/picasaweb.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="{% url media "djangoogle/css/picasaweb.css" %}" rel="stylesheet" type="text/css" media="screen" />
 {% endblock %}
 
 {% block content %}
@@ -29,7 +29,7 @@
       <a href="{% url picasaweb-view-album entry.parent.id entry.id %}" title="{% trans 'Click here to launch a slideshow of this album' %}"><img class="photo" width="{{ entry.thumbnail.width }}" height="{{ entry.thumbnail.height }}" src="{{ entry.thumbnail.url }}"/></a>
     </td>
   </tr>
-  <tr class="title"><td><a href="{{ entry.web_url }}"><img class="picasaweb-logo" src="{{ MEDIA_URL }}djangoogle/img/picasaweb.gif" title="{% trans 'Click here to view this album directly inside PicasaWeb' %}" alt="{% trans 'PicasaWeb' %}"></a> {{ entry.title }}</td></tr>
+  <tr class="title"><td><a href="{{ entry.web_url }}"><img class="picasaweb-logo" src="{% url media "djangoogle/img/picasaweb.gif" %}" title="{% trans 'Click here to view this album directly inside PicasaWeb' %}" alt="{% trans 'PicasaWeb' %}"></a> {{ entry.title }}</td></tr>
   <tr class="details">
     <td>
       {% if entry.description %}{{ entry.description }}<br/>{% endif %}

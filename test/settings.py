@@ -74,7 +74,6 @@ TEMPLATE_LOADERS = (
 # What we like to have in every page we render, as context
 TEMPLATE_CONTEXT_PROCESSORS = (
   'django.core.context_processors.auth', #for users and permissions
-  'django.core.context_processors.media', #for MEDIA_URL
   'django.core.context_processors.i18n', #for LANGUAGES 
 )
 
