@@ -21,3 +21,4 @@ urlpatterns = patterns('',
                          name='calendar-view'),
                       )
 
+namespaced = (urlpatterns, 'djangoogle', 'djangoogle')
