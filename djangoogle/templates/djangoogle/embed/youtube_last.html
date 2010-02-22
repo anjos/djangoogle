@@ -15,7 +15,7 @@
                   <a href="{% url djangoogle:youtube-view-video obj.parent.id obj.id %}"><img width="{% widthratio thumb_height obj.thumbnail.height obj.thumbnail.width %}" height="{{ thumb_height }}" src="{{ obj.thumbnail.url }}"/></a>
                 </td>
                 <td>
-                  <div class="object_title">{{ obj.title|truncatewords:"5" }}</div>
+                  <div class="object_title"><a href="{{ obj.youtube_link }}"><img class="youtube-logo" src="{% url media "djangoogle/img/png/16/youtube.png" %}" title="{% trans 'Click here to view this video directly inside YouTube' %}" alt="{% trans 'YouTube' %}" width="31" height="16"></a> {{ obj.title|truncatewords:"5" }}</div>
                   <div class="comment">
                     {{ obj.duration }} {% trans "seconds" %}, {% trans "at" %} <a href="{% url djangoogle:youtube-list-view obj.parent.id %}" title="{% trans 'Click here to only view videos from this playlist' %}">{{ obj.parent.name }}</a>, {% trans "updated" %} {{ obj.published|date:"D, j/M/Y" }}
                     {% if obj.description %}<br/>{{ obj.description|truncatewords:"8" }} {% endif %}

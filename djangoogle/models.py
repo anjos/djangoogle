@@ -23,10 +23,12 @@ def populate_defaults():
 
 populate_defaults()
 
-YOUTUBE_VIDEO_RE = re.compile('^.*/feeds\/api/videos/[^/]*$')
-def get_video_link(l):
+YOUTUBE_VIDEO_DATA = re.compile('^.*/feeds\/api/videos/[^/]*$')
+YOUTUBE_VIDEO_PAGE = re.compile('^.*/watch\?v=[^/]*$')
+
+def get_video_link(l, regexp):
   """Selects the URL that mostly looks like the video main entry."""
-  retval = [k.href for k in l if YOUTUBE_VIDEO_RE.match(k.href)]
+  retval = [k.href for k in l if regexp.match(k.href)]
   if len(retval): return retval[0]
   return None
 
@@ -264,10 +266,11 @@ class YouTubeVideo:
 
   def __init__(self, service, entry, parent):
     """Initialize from Google data feed entry from YouTube."""
-    video_link = get_video_link(entry.link)
+    video_link = get_video_link(entry.link, YOUTUBE_VIDEO_DATA)
     if not video_link:
       raise RuntimeError, 'Cannot find relevant video link in %s' % \
           [k.href for k in entry.link]
+    self.youtube_link = get_video_link(entry.link, YOUTUBE_VIDEO_PAGE)
     self.playlist_entry = entry
     self.original_entry = service.GetYouTubeVideoEntry(video_link)
     self.author = entry.author[0].name.text
