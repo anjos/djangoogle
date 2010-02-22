@@ -60,3 +60,8 @@ def is_album(value):
 def is_video(value):
   """Says if this object is an YouTube video or not."""
   return isinstance(value, YouTubeVideo)
+
+@register.filter
+def is_even(value):
+  """Says if the value is even"""
+  return value%2 == 0
