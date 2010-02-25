@@ -3,36 +3,34 @@ td.bubble_contents {
   vertical-align: top;
 }
 
-table.preview {
+.preview {
   /** border: 1px red solid; **/
   padding: 0.2em;
   height: 100%;
 }
 
-table.preview td.thumbnail img {
+.preview img.thumbnail {
   background-color: white;
   border: solid #ccc 1px;
   padding: 0.2em;
   -moz-border-radius: 0.3em; 
   -khtml-border-radius: 0.3em; 
   border-radius: 0.3em; 
+  float: right;
+  margin: 0.3em;
 }
 
-table.preview td {
+.preview {
   font-family: arial, helvetica, sans;
   vertical-align: top;
 }
 
-table.preview td.thumbnail {
-  width: 10%;
-}
-
-table.preview .object_title {
+.preview .object_title {
   text-align: left;
   font-weight: bold;
 }
 
-table.preview .comment {
+.preview .comment {
   font-size: 0.7em;
   color: #555;
 }
