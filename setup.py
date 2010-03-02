@@ -11,7 +11,7 @@ from setuptools import setup, find_packages
 setup(
 
     name = "djangoogle",
-    version = "0.4.1", 
+    version = "0.4.2", 
     packages = find_packages(),
 
     # we also need all translation files and templates
@@ -35,7 +35,6 @@ setup(
       'Django>=1.1',
       'docutils',
       'pytz',
-      'setuptools',
       'PIL>=1.1.6',
       ],
 
