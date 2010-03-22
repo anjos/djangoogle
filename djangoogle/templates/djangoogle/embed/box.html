@@ -1,24 +1,19 @@
-{% load djangoogle_tags djangoogle_filters %}
-<span class="djangoogle">
-  <span class="bubble">
-    <span class="list">
-      <table>
-        <tr class="bubble_title"><td colspan="{{ objects.0|length }}">{{ title }}</td></tr>
-        {% for row in objects %}
-        <tr>
-          {% for obj in row %}
-          <td class="bubble_contents {% cycle 'even' 'odd' as cycler %} {% if obj|is_video %}video{% else %}photo{% endif %}">
-            {% if obj|is_album %}
-            {% picasaweb_vignette obj thumb_height title_trunc %}
-            {% else %}
-            {% youtube_vignette obj thumb_height title_trunc desc_trunc %}
-            {% endif %}
-          </td><!-- ends class="bubble_contents" -->
-          {% endfor %}
-          {% if row|length|is_even %}<!-- Burn me: {% cycle cycler %} -->{% endif %}
-        </tr>
-        {% endfor %}
-      </table>
-    </span><!-- ends class="list" -->
-  </span><!-- ends class="bubble" -->
-</span><!-- ends class="djangoogle" -->
+{% load djangoogle_filters djangoogle_tags %}
+<div class="djangoogle">
+  <table class="list">
+    {% for row in objects %}
+    <tr>
+      {% for obj in row %}
+      <td class="contents {% cycle 'even' 'odd' as cycler %} {% if obj|is_video %}video{% else %}photo{% endif %}">
+        {% if obj|is_album %}
+        {% picasaweb_vignette obj thumb_height title_trunc %}
+        {% else %}
+        {% youtube_vignette obj thumb_height title_trunc desc_trunc %}
+        {% endif %}
+      </td><!-- ends class="contents" -->
+      {% endfor %}
+      {% if row|length|is_even %}<!-- Burn me: {% cycle cycler %} -->{% endif %}
+    </tr>
+    {% endfor %}
+  </table><!-- ends class="list" -->
+</div><!-- ends class="djangoogle" -->

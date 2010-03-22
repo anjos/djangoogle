@@ -10,7 +10,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^$', direct_to_template, {'template': 'home.html'}),
-    url(r'^p/', test_urls),
+    url(r'^g/', test_urls),
     url(r'^admin/', admin.site.urls),
     url(r'^i18n/', include('django.conf.urls.i18n')),
     url(r'^jsi18n/(?P<packages>\S+?)/$', 

@@ -1,4 +1,4 @@
-img.photo {
+.djangoogle img.photo {
   background-color: white;
   border: solid #ccc 1px;
   padding: 0.6em;
@@ -8,14 +8,14 @@ img.photo {
 }
 
 /* paginator style */
-.pagination {
+.djangoogle .pagination {
   font-family: arial, helvetica, sans;
   font-weight: bold; 
   font-size: 0.9em;
   color: #333;
 }
 
-.pagination .page {
+.djangoogle .pagination .page {
   background-color: #ccc;
   border-color: #ccc;
   border-style: outset;
@@ -24,18 +24,47 @@ img.photo {
   padding: 0.2em 0.5em 0.2em 0.5em;
 }
 
-.pagination .page:hover {
+.djangoogle .pagination .page:hover {
   background-color: #f88;
   border-color: #f88;
   border-style: inset;
 }
 
-.pagination .current {
+.djangoogle .pagination .current {
   background-color: #bdf;
   border-color: #bdf;
 }
 
-.pagination a {
+.djangoogle .pagination a {
   text-decoration: none;
   color: #333;
+}
+
+.djangoogle table.entry {
+  text-align: center;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.djangoogle table.entry tr, table.entry td {
+  width: 200px;
+}
+
+.djangoogle table.entry tr.title td {
+  font-weight: bold;
+  color: black
+}
+
+.djangoogle table.entry tr.details td {
+  font-size: 0.8em;
+  font-style: italic;
+}
+
+.djangoogle img.picasaweb-logo {
+  border: none;
+  width: 1em;
+}
+
+.djangoogle div.video {
+  padding: 1.5em;
 }

@@ -1,15 +1,15 @@
-td.bubble_contents {
+.djangoogle table.list td.contents {
   /** border: 1px blue solid; **/
   vertical-align: top;
 }
 
-.preview {
+.djangoogle .preview {
   /** border: 1px red solid; **/
   padding: 0.2em;
   height: 100%;
 }
 
-.preview img.thumbnail {
+.djangoogle .preview img.thumbnail {
   background-color: white;
   border: solid #ccc 1px;
   padding: 0.2em;
@@ -20,17 +20,17 @@ td.bubble_contents {
   margin: 0.3em;
 }
 
-.preview {
+.djangoogle .preview {
   font-family: arial, helvetica, sans;
   vertical-align: top;
 }
 
-.preview .object_title {
+.djangoogle .preview .object_title {
   text-align: left;
   font-weight: bold;
 }
 
-.preview .comment {
+.djangoogle .preview .comment {
   font-size: 0.7em;
   color: #555;
 }
