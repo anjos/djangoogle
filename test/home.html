@@ -1,29 +1,16 @@
 {% extends "base.html" %}
-{% load i18n djangoogle_tags %}
 
-{% block title %}{% trans "Test home page" %}{% endblock %}
+{% load i18n publication_tags %}
 
 {% block media %}
-{{ block.super }}
-{% djangoogle_last_media %}
+  {{ block.super }}
+  <link href="{% url media "publications/css/style.css" %}" rel="stylesheet" type="text/css" media="screen" />
 {% endblock %}
 
+{% block title %}{% trans "Home Page" %}{% endblock %}
+
 {% block content %}
-<table class="home">
-  <tr>
-    <td>
-      {% djangoogle_media_box 3 0 3 %}
-    </td>
-  </tr>
-  <tr>
-    <td>
-      {% djangoogle_media_box 0 3 3 %}
-    </td>
-  </tr>
-  <tr>
-    <td>
-    {% djangoogle_media_box 4 4 3 %}
-    </td>
-  </tr>
-</table>
+<div class="publication">
+{% last_publications 5 0 %}
+</div>
 {% endblock %}

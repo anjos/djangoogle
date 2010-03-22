@@ -1,0 +1,56 @@
+[
+  {
+    "pk": 1, 
+    "model": "djangoogle.picasawebaccount", 
+    "fields": {
+      "email": "irina1005@gmail.com", 
+      "num_albums": 20
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "djangoogle.picasawebaccount", 
+    "fields": {
+      "email": "bmcclendon@gmail.com", 
+      "num_albums": 10
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "djangoogle.picasawebaccount", 
+    "fields": {
+      "email": "mahaniok@gmail.com", 
+      "num_albums": 0
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "djangoogle.calendar", 
+    "fields": {
+      "calendar_id": "df5gn5s0g0ks4pkpjm1kk0n26428h2d0@import.calendar.google.com"
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "djangoogle.calendar", 
+    "fields": {
+      "calendar_id": "nf89st0pjn6vpmq7t2qda95i9cg9lphm%40import.calendar.google.com"
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "djangoogle.youtubeplaylist", 
+    "fields": {
+      "list": "E49E3B8EE184CF25", 
+      "name": "Example 1"
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "djangoogle.youtubeplaylist", 
+    "fields": {
+      "list": "38743EACD21A054C", 
+      "name": "Example 2"
+    }
+  }
+]
