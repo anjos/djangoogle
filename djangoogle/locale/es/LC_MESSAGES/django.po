@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-17 18:31+0200\n"
+"POT-Creation-Date: 2010-03-22 16:14+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,96 +16,96 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: models.py:97
+#: models.py:107
 msgid "Picasaweb e-mail"
 msgstr ""
 
-#: models.py:98
+#: models.py:108
 msgid "Insert the e-mail of a picasaweb user in the form of user@domain"
 msgstr ""
 
-#: models.py:100
+#: models.py:110
 msgid "Number of albums to display"
 msgstr ""
 
-#: models.py:101
+#: models.py:111
 msgid "The special value of 0 (zero) will display all albums"
 msgstr ""
 
-#: models.py:104
+#: models.py:114
 msgid "google picasa web account"
 msgstr ""
 
-#: models.py:105
+#: models.py:115
 msgid "google picasa web accounts"
 msgstr ""
 
-#: models.py:170
+#: models.py:180
 #, python-format
 msgid "Last uploaded album of %(email)s"
 msgstr ""
 
-#: models.py:172
+#: models.py:182
 #, python-format
 msgid "%(email)s, last %(num_albums)s albums"
 msgstr ""
 
-#: models.py:175
+#: models.py:185
 #, python-format
 msgid "%(email)s"
 msgstr ""
 
-#: models.py:201
+#: models.py:211
 msgid "Calendar identifier"
 msgstr ""
 
-#: models.py:202
+#: models.py:212
 msgid ""
 "Insert the identifier of a google calendar in the form of secret@domain. "
 "This identifier can be read by going into the calendar details of your "
 "google account."
 msgstr ""
 
-#: models.py:205
+#: models.py:215
 msgid "google calendar"
 msgstr ""
 
-#: models.py:206
+#: models.py:216
 msgid "google calendars"
 msgstr ""
 
-#: models.py:246
+#: models.py:256
 #, python-format
 msgid "Public google calendar \"%s\""
 msgstr ""
 
-#: models.py:297
+#: models.py:312
 msgid "Name"
 msgstr ""
 
-#: models.py:297
+#: models.py:312
 msgid ""
 "Insert here a meaningful name so you remember what is this playlist key good "
 "for."
 msgstr ""
 
-#: models.py:298
+#: models.py:313
 msgid "YouTube playlist identifier"
 msgstr ""
 
-#: models.py:298
+#: models.py:313
 msgid "Insert the key of the youtube (public) playlist"
 msgstr ""
 
-#: models.py:301
+#: models.py:316
 msgid "youtube playlist"
 msgstr ""
 
-#: models.py:302
+#: models.py:317
 msgid "youtube playlists"
 msgstr ""
 
-#: models.py:335
+#: models.py:350
 #, python-format
 msgid "Youtube playlist \"%(name)s\""
 msgstr ""
@@ -121,29 +121,30 @@ msgstr ""
 #: templates/djangoogle/calendar_entries.html:16
 #: templates/djangoogle/calendar_entries.html:30
 #: templates/djangoogle/picasaweb_gallery.html:39
-#: templates/djangoogle/picasaweb_last.html:23
+#: templates/djangoogle/embed/picasaweb_vignette.html:10
+#: templates/djangoogle/embed/youtube_vignette.html:10
 msgid "updated"
 msgstr ""
 
 #: templates/djangoogle/calendar_entries.html:22
-#: templates/djangoogle/calendar_next.html:5
 #: templates/djangoogle/picasaweb_slideshow.html:26
-#: templates/djangoogle/youtube_video.html:23
+#: templates/djangoogle/youtube_video.html:26
+#: templates/djangoogle/embed/calendar_next.html:5
 msgid "Description"
 msgstr ""
 
 #: templates/djangoogle/calendar_entries.html:23
-#: templates/djangoogle/calendar_next.html:6
+#: templates/djangoogle/embed/calendar_next.html:6
 msgid "When"
 msgstr ""
 
 #: templates/djangoogle/calendar_entries.html:23
-#: templates/djangoogle/calendar_next.html:6
+#: templates/djangoogle/embed/calendar_next.html:6
 msgid "until"
 msgstr ""
 
 #: templates/djangoogle/calendar_entries.html:24
-#: templates/djangoogle/calendar_next.html:7
+#: templates/djangoogle/embed/calendar_next.html:7
 msgid "Where"
 msgstr ""
 
@@ -155,16 +156,9 @@ msgstr ""
 msgid "Or maybe you have no calendars configured?"
 msgstr ""
 
-#: templates/djangoogle/calendar_next.html:10
-msgid "No new events (or cannot connect to Google Calendar service at"
-msgstr ""
-
 #: templates/djangoogle/pagination.html:7
-msgid "Page"
-msgstr ""
-
-#: templates/djangoogle/pagination.html:7
-msgid "of"
+#, python-format
+msgid "go to page %(page)s"
 msgstr ""
 
 #: templates/djangoogle/picasaweb_gallery.html:6
@@ -179,14 +173,17 @@ msgid ""
 msgstr ""
 
 #: templates/djangoogle/picasaweb_gallery.html:29
+#: templates/djangoogle/embed/picasaweb_vignette.html:8
 msgid "Click here to launch a slideshow of this album"
 msgstr ""
 
 #: templates/djangoogle/picasaweb_gallery.html:32
+#: templates/djangoogle/embed/picasaweb_vignette.html:9
 msgid "Click here to view this album directly inside PicasaWeb"
 msgstr ""
 
 #: templates/djangoogle/picasaweb_gallery.html:32
+#: templates/djangoogle/embed/picasaweb_vignette.html:9
 msgid "PicasaWeb"
 msgstr ""
 
@@ -196,22 +193,12 @@ msgid "%(numphotos)s photo%(plural)s by"
 msgstr ""
 
 #: templates/djangoogle/picasaweb_gallery.html:38
-#: templates/djangoogle/youtube_video.html:19
 msgid "published"
 msgstr ""
 
 #: templates/djangoogle/picasaweb_gallery.html:47
 #: templates/djangoogle/picasaweb_slideshow.html:34
 msgid "Cannot connect to PicasaWeb service."
-msgstr ""
-
-#: templates/djangoogle/picasaweb_last.html:23
-#, python-format
-msgid "%(numphotos)s photo%(plural)s"
-msgstr ""
-
-#: templates/djangoogle/picasaweb_last.html:30
-msgid "Cannot connect to PicasaWeb service at"
 msgstr ""
 
 #: templates/djangoogle/picasaweb_slideshow.html:6
@@ -240,6 +227,7 @@ msgid "Number of photos"
 msgstr ""
 
 #: templates/djangoogle/picasaweb_slideshow.html:29
+#: templates/djangoogle/youtube_video.html:28
 msgid "Published"
 msgstr ""
 
@@ -259,8 +247,19 @@ msgid ""
 "bellow to go back in history."
 msgstr ""
 
+#: templates/djangoogle/youtube_gallery.html:34
+#: templates/djangoogle/embed/youtube_vignette.html:9
+msgid "Click here to view this video directly inside YouTube"
+msgstr ""
+
+#: templates/djangoogle/youtube_gallery.html:34
+#: templates/djangoogle/embed/youtube_vignette.html:9
+msgid "YouTube"
+msgstr ""
+
 #: templates/djangoogle/youtube_gallery.html:39
-#: templates/djangoogle/youtube_video.html:25
+#: templates/djangoogle/youtube_video.html:29
+#: templates/djangoogle/embed/youtube_vignette.html:10
 msgid "seconds"
 msgstr ""
 
@@ -269,18 +268,50 @@ msgid "Playlist"
 msgstr ""
 
 #: templates/djangoogle/youtube_gallery.html:40
+#: templates/djangoogle/embed/youtube_vignette.html:10
 msgid "Click here to only view videos from this playlist"
 msgstr ""
 
 #: templates/djangoogle/youtube_gallery.html:48
-#: templates/djangoogle/youtube_video.html:29
+#: templates/djangoogle/youtube_video.html:32
 msgid "Cannot connect to YouTube service at"
 msgstr ""
 
-#: templates/djangoogle/youtube_video.html:24
+#: templates/djangoogle/youtube_video.html:25
+msgid "Video details"
+msgstr ""
+
+#: templates/djangoogle/youtube_video.html:27
 msgid "Uploaded by"
 msgstr ""
 
-#: templates/djangoogle/youtube_video.html:25
+#: templates/djangoogle/youtube_video.html:29
 msgid "Duration"
+msgstr ""
+
+#: templates/djangoogle/embed/calendar_next.html:10
+msgid "No new events (or cannot connect to Google Calendar service at"
+msgstr ""
+
+#: templates/djangoogle/embed/picasaweb_vignette.html:10
+#, python-format
+msgid "%(counter)s photo by"
+msgid_plural "%(counter)s photos by"
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/djangoogle/embed/youtube_vignette.html:10
+msgid "at"
+msgstr ""
+
+#: templatetags/djangoogle_tags.py:86
+msgid "Latest media"
+msgstr ""
+
+#: templatetags/djangoogle_tags.py:87
+msgid "Latest photos"
+msgstr ""
+
+#: templatetags/djangoogle_tags.py:88
+msgid "Latest videos"
 msgstr ""
