@@ -11,7 +11,7 @@
     "pk": 2, 
     "model": "djangoogle.picasawebaccount", 
     "fields": {
-      "email": "bmcclendon@gmail.com", 
+      "email": "atnbsa@gmail.com", 
       "num_albums": 10
     }
   }, 
