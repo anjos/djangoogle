@@ -104,7 +104,7 @@ class PicasaWebAlbum:
 class PicasawebAccount(models.Model):
   """This model describes an user account in picasaweb."""
 
-  email = models.EmailField(_('Picasaweb e-mail'), max_length=256, unique=True,
+  email = models.EmailField(_('Picasaweb e-mail'), max_length=255, unique=True,
       help_text=_('Insert the e-mail of a picasaweb user in the form of user@domain'))
   num_albums = models.PositiveSmallIntegerField(\
     _('Number of albums to display'), default=0,
@@ -208,7 +208,7 @@ class CalendarEntry:
 class Calendar(models.Model):
   """This model describes a particular calendar in Google Calendar."""
 
-  calendar_id = models.EmailField(_('Calendar identifier'), max_length=512,
+  calendar_id = models.EmailField(_('Calendar identifier'), max_length=255,
       unique=True, help_text=_('Insert the identifier of a google calendar in the form of secret@domain. This identifier can be read by going into the calendar details of your google account.'))
 
   class Meta: 
