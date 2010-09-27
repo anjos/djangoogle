@@ -11,7 +11,7 @@ from setuptools import setup, find_packages
 setup(
 
     name = "djangoogle",
-    version = "0.5.3", 
+    version = "0.5.4", 
     packages = find_packages(),
 
     # we also need all translation files and templates
