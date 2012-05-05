@@ -19,7 +19,7 @@
 
 {% if object %}
 
-<p class="slideshow">{% autoescape off %}{% picasaweb_slideshow object LANGUAGE_CODE 600 480 %}{% endautoescape %}</p>
+<p class="slideshow">{% autoescape off %}{% picasaweb_slideshow object LANGUAGE_CODE 640 480 %}{% endautoescape %}</p>
 
 <h2>{% trans "Album details" %}</h2>
 <p>{% trans "Author" %}: <a href="{% url djangoogle:picasaweb-user-view object.parent.id %}" title="{% trans 'Click to see other albums by this author' %}">{{ object.author }}</a></p>
