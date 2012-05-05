@@ -1,4 +1,4 @@
-{% load i18n %}
+{% load staticfiles i18n %}
 {% comment %}
 Requires "obj" should be a YouTubeVideo 
 Should also tell what "thumb_height" is supposed to be
@@ -6,7 +6,7 @@ And, finally, how to truncate the title at "title_trunc" and the description in 
 {% endcomment %}
 <div class="preview">
   <a href="{% url djangoogle:youtube-view-video obj.parent.id obj.id %}"><img width="{% widthratio thumb_height obj.thumbnail.height obj.thumbnail.width %}" height="{{ thumb_height }}" src="{{ obj.thumbnail.url }}" class="thumbnail"/></a>
-  <div class="object_title"><a href="{{ obj.youtube_link }}"><img class="youtube-logo" src="{% url media "djangoogle/img/png/16/youtube.png" %}" title="{% trans 'Click here to view this video directly inside YouTube' %}" alt="{% trans 'YouTube' %}" width="31" height="16"></a> {{ obj.title|truncatewords:title_trunc }}</div>
+  <div class="object_title"><a href="{{ obj.youtube_link }}"><img class="youtube-logo" src="{% static "djangoogle/img/png/16/youtube.png" %}" title="{% trans 'Click here to view this video directly inside YouTube' %}" alt="{% trans 'YouTube' %}" width="31" height="16"></a> {{ obj.title|truncatewords:title_trunc }}</div>
   <div class="comment"> {{ obj.duration }} {% trans "seconds" %}, {% trans "at" %} <a href="{% url djangoogle:youtube-list-view obj.parent.id %}" title="{% trans 'Click here to only view videos from this playlist' %}">{{ obj.parent.name }}</a>, {% trans "updated" %} {{ obj.published|date:"D, j/M/Y" }}{% if obj.description %}<br/>{{ obj.description|truncatewords:desc_trunc }} {% endif %}
   </div>
 </div><!-- ends class="preview" -->

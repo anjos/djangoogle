@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 
-{% load i18n %}
+{% load staticfiles i18n %}
 {% load djangoogle_tags %}
 
 {% block title %}{% trans "Photo Gallery" %}{% if owner %} ({{ owner }}){% endif %}{% endblock %}
 
 {% block media %} <!-- extends the current media block -->
 {{ block.super }}
-<link href="{% url media "djangoogle/css/djangoogle.css" %}" rel="stylesheet" type="text/css" media="screen" />
+<link href="{% static "djangoogle/css/djangoogle.css" %}" rel="stylesheet" type="text/css" media="screen" />
 {% endblock %}
 
 {% block content %}
@@ -29,7 +29,7 @@
       <a href="{% url djangoogle:picasaweb-view-album entry.parent.id entry.id %}" title="{% trans 'Click here to launch a slideshow of this album' %}"><img class="photo" width="{{ entry.thumbnail.width }}" height="{{ entry.thumbnail.height }}" src="{{ entry.thumbnail.url }}"/></a>
     </td>
   </tr>
-  <tr class="title"><td><a href="{{ entry.web_url }}"><img class="picasaweb-logo" src="{% url media "djangoogle/img/png/16/picasa.png" %}" title="{% trans 'Click here to view this album directly inside PicasaWeb' %}" alt="{% trans 'PicasaWeb' %}" width="15" height="16"></a> {{ entry.title }}</td></tr>
+  <tr class="title"><td><a href="{{ entry.web_url }}"><img class="picasaweb-logo" src="{% static "djangoogle/img/png/16/picasa.png" %}" title="{% trans 'Click here to view this album directly inside PicasaWeb' %}" alt="{% trans 'PicasaWeb' %}" width="15" height="16"></a> {{ entry.title }}</td></tr>
   <tr class="details">
     <td>
       {% if entry.description %}{{ entry.description }}<br/>{% endif %}
