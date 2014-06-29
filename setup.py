@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # vim: set fileencoding=utf-8 :
 # Created by Andre Anjos <andre.dos.anjos@cern.ch>
-# Seg 14 Set 2009 14:42:06 CEST 
+# Seg 14 Set 2009 14:42:06 CEST
 
 """Installation instructions for djangoogle
 """
@@ -11,7 +11,7 @@ from setuptools import setup, find_packages
 setup(
 
     name = "djangoogle",
-    version = "0.5.4", 
+    version = "0.5.4",
     packages = find_packages(),
 
     # we also need all translation files and templates
@@ -31,11 +31,11 @@ setup(
     zip_safe=False,
 
     install_requires = [
-      'gdata>=2.0.0', 
+      'gdata>=2.0.0',
       'Django>=1.1',
       'docutils',
       'pytz',
-      'PIL>=1.1.6',
+      'pillow',
       ],
 
     dependency_links = [
@@ -50,6 +50,6 @@ setup(
     license = "PSF",
     keywords = "gdata django google calendar youtube picasaweb",
     url = "",   # project home page, if any
-    
+
 )
 
